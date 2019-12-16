@@ -25,7 +25,7 @@
 <meta name="author" content="Damir Pintar">
 
 
-<meta name="date" content="2019-12-06">
+<meta name="date" content="2019-12-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -296,6 +296,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="dates.html"><a href="dates.html#exercise-tasks-1"><i class="fa fa-check"></i>Exercise Tasks</a></li>
 </ul></li>
+<li class="chapter" data-level="11" data-path="dplyr.html"><a href="dplyr.html"><i class="fa fa-check"></i><b>11</b> Managing data frames with <code>dplyr</code> package -</a><ul>
+<li class="chapter" data-level="11.1" data-path="dplyr.html"><a href="dplyr.html#dataset-titanic"><i class="fa fa-check"></i><b>11.1</b> Dataset: <em>Titanic</em></a></li>
+<li class="chapter" data-level="11.2" data-path="dplyr.html"><a href="dplyr.html#creating-a-subset-of-observations-with-filter-andslice"><i class="fa fa-check"></i><b>11.2</b> Creating a subset of observations with <code>filter</code> and<code>slice</code></a></li>
+<li class="chapter" data-level="11.3" data-path="dplyr.html"><a href="dplyr.html#creating-a-subset-of-columns-with-select"><i class="fa fa-check"></i><b>11.3</b> Creating a subset of columns with <code>select</code></a></li>
+<li class="chapter" data-level="11.4" data-path="dplyr.html"><a href="dplyr.html#creating-new-columns-with-mutate"><i class="fa fa-check"></i><b>11.4</b> Creating new columns with <code>mutate</code></a></li>
+<li class="chapter" data-level="11.5" data-path="dplyr.html"><a href="dplyr.html#sample-dataset-houston-flights"><i class="fa fa-check"></i><b>11.5</b> Sample Dataset: <em>Houston flights</em></a></li>
+<li class="chapter" data-level="11.6" data-path="dplyr.html"><a href="dplyr.html#grouping-and-aggregation-with-group_by-andsummarise"><i class="fa fa-check"></i><b>11.6</b> Grouping and aggregation with <code>group_by</code> and<code>summarise</code></a></li>
+<li class="chapter" data-level="11.7" data-path="dplyr.html"><a href="dplyr.html#merging-data-frames-with-join-functions"><i class="fa fa-check"></i><b>11.7</b> Merging data frames with join functions</a></li>
+<li class="chapter" data-level="11.8" data-path="dplyr.html"><a href="dplyr.html#integrating-dplyr-with-relational-databases"><i class="fa fa-check"></i><b>11.8</b> Integrating <code>dplyr</code> with relational databases</a></li>
+<li class="chapter" data-level="" data-path="dplyr.html"><a href="dplyr.html#exercises-7"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -552,7 +563,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## function (object, ...) 
 ## standardGeneric(&quot;summary&quot;)
-## &lt;environment: 0x0000000018eaf838&gt;
+## &lt;environment: 0x0000000013d99a18&gt;
 ## Methods may be defined for arguments: object
 ## Use  showMethods(&quot;summary&quot;)  for currently available ones.
 ## function (object, maxsum = 100L, ...) 
@@ -573,7 +584,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##         c(tt, `NA&#39;s` = sum(nas))
 ##     else tt
 ## }
-## &lt;bytecode: 0x000000001b6ed680&gt;
+## &lt;bytecode: 0x000000001fa32fb0&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 <p>By understanding the principle of generic functions, we have completed a picture of S3 objects. The most important thing we have to adopt is that in this model functions are not part of the object itself, they are defined separately, and the link between the object and its “method” is only in the function name by which R “links” the generic function and that object. Although this principle is primitive and vulnerable to faults in the hands of inattentive developers, it is easy to use and very effective. Finally, let’s note that this approach is not entirely unique to the language R - similar principles can be found in other programming languages. It is specific to R in that the principle is used openly and almost exclusively.</p>
 <p>Objects and generic functions will be re-visited when we learn to create our own functions, which will enable us to create both the constructors of our objects and their generic functions.</p>
