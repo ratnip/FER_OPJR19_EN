@@ -25,7 +25,7 @@
 <meta name="author" content="Damir Pintar">
 
 
-<meta name="date" content="2019-12-16">
+<meta name="date" content="2020-01-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="dates.html">
-
+<link rel="next" href="ggplot2.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -306,6 +306,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.7" data-path="dplyr.html"><a href="dplyr.html#merging-data-frames-with-join-functions"><i class="fa fa-check"></i><b>11.7</b> Merging data frames with join functions</a></li>
 <li class="chapter" data-level="11.8" data-path="dplyr.html"><a href="dplyr.html#integrating-dplyr-with-relational-databases"><i class="fa fa-check"></i><b>11.8</b> Integrating <code>dplyr</code> with relational databases</a></li>
 <li class="chapter" data-level="" data-path="dplyr.html"><a href="dplyr.html#exercises-7"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>12</b> Visualising data with <code>ggplot2</code> package</a><ul>
+<li class="chapter" data-level="12.1" data-path="ggplot2.html"><a href="ggplot2.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>12.1</b> Exploratory data analysis</a></li>
+<li class="chapter" data-level="12.2" data-path="ggplot2.html"><a href="ggplot2.html#data-visualization-using-the-r-language"><i class="fa fa-check"></i><b>12.2</b> Data visualization using the R language</a></li>
+<li class="chapter" data-level="12.3" data-path="ggplot2.html"><a href="ggplot2.html#grammar-of-graphics-and-the-ggplot2-package"><i class="fa fa-check"></i><b>12.3</b> Grammar of graphics and the <code>ggplot2</code> package</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="ggplot2.html"><a href="ggplot2.html#aspects-of-data-aesthetics-and-geometries"><i class="fa fa-check"></i><b>12.3.1</b> Aspects of data, aesthetics and geometries</a></li>
+<li class="chapter" data-level="12.3.2" data-path="ggplot2.html"><a href="ggplot2.html#fixed-geometry-parameters"><i class="fa fa-check"></i><b>12.3.2</b> Fixed geometry parameters</a></li>
+<li class="chapter" data-level="12.3.3" data-path="ggplot2.html"><a href="ggplot2.html#the-aspects-of-statistics-and-position"><i class="fa fa-check"></i><b>12.3.3</b> The aspects of statistics and position</a></li>
+<li class="chapter" data-level="12.3.4" data-path="ggplot2.html"><a href="ggplot2.html#the-relationship-between-geometry-and-statistics"><i class="fa fa-check"></i><b>12.3.4</b> The relationship between geometry and statistics</a></li>
+<li class="chapter" data-level="12.3.5" data-path="ggplot2.html"><a href="ggplot2.html#storing-a-graph-to-a-file"><i class="fa fa-check"></i><b>12.3.5</b> Storing a graph to a file</a></li>
+<li class="chapter" data-level="12.3.6" data-path="ggplot2.html"><a href="ggplot2.html#aspects-of-scale-coordinate-system-and-theme"><i class="fa fa-check"></i><b>12.3.6</b> Aspects of scale, coordinate system and theme</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="ggplot2.html"><a href="ggplot2.html#tu"><i class="fa fa-check"></i><b>12.4</b> TU</a><ul>
+<li class="chapter" data-level="12.4.1" data-path="ggplot2.html"><a href="ggplot2.html#conditional-faceted-graphs"><i class="fa fa-check"></i><b>12.4.1</b> Conditional (faceted) graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="ggplot2.html"><a href="ggplot2.html#graphs-in-exploratory-analysis-and-reporting"><i class="fa fa-check"></i><b>12.5</b> Graphs in Exploratory Analysis and Reporting</a></li>
+<li class="chapter" data-level="" data-path="ggplot2.html"><a href="ggplot2.html#exercises-8"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
 </ul>
 
@@ -1391,11 +1408,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Programirajmo u R-u</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.fer.unizg.hr/en/damir.pintar" property="cc:attributionName" rel="cc:attributionURL">Damir Pintar</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://ratnip.github.io/FER_OPJR/" rel="dct:source">https://ratnip.github.io/FER_OPJR/</a></p>
 
-<div id="refs" class="references">
-<div>
-<p>Bache, Stefan Milton, and Hadley Wickham. 2014. <em>Magrittr: A Forward-Pipe Operator for R</em>. <a href="https://CRAN.R-project.org/package=magrittr">https://CRAN.R-project.org/package=magrittr</a>.</p>
-</div>
-</div>
 </div>
 </div>
             </section>
@@ -1403,8 +1415,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="dates.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="dates.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ggplot2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
