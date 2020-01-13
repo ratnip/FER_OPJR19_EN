@@ -25,7 +25,7 @@
 <meta name="author" content="Damir Pintar">
 
 
-<meta name="date" content="2020-01-06">
+<meta name="date" content="2020-01-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -317,11 +317,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.3.4" data-path="ggplot2.html"><a href="ggplot2.html#the-relationship-between-geometry-and-statistics"><i class="fa fa-check"></i><b>12.3.4</b> The relationship between geometry and statistics</a></li>
 <li class="chapter" data-level="12.3.5" data-path="ggplot2.html"><a href="ggplot2.html#storing-a-graph-to-a-file"><i class="fa fa-check"></i><b>12.3.5</b> Storing a graph to a file</a></li>
 <li class="chapter" data-level="12.3.6" data-path="ggplot2.html"><a href="ggplot2.html#aspects-of-scale-coordinate-system-and-theme"><i class="fa fa-check"></i><b>12.3.6</b> Aspects of scale, coordinate system and theme</a></li>
+<li class="chapter" data-level="12.3.7" data-path="ggplot2.html"><a href="ggplot2.html#conditional-faceted-graphs"><i class="fa fa-check"></i><b>12.3.7</b> Conditional (faceted) graphs</a></li>
 </ul></li>
-<li class="chapter" data-level="12.4" data-path="ggplot2.html"><a href="ggplot2.html#tu"><i class="fa fa-check"></i><b>12.4</b> TU</a><ul>
-<li class="chapter" data-level="12.4.1" data-path="ggplot2.html"><a href="ggplot2.html#conditional-faceted-graphs"><i class="fa fa-check"></i><b>12.4.1</b> Conditional (faceted) graphs</a></li>
-</ul></li>
-<li class="chapter" data-level="12.5" data-path="ggplot2.html"><a href="ggplot2.html#graphs-in-exploratory-analysis-and-reporting"><i class="fa fa-check"></i><b>12.5</b> Graphs in Exploratory Analysis and Reporting</a></li>
+<li class="chapter" data-level="12.4" data-path="ggplot2.html"><a href="ggplot2.html#graphs-in-exploratory-analysis-and-reporting"><i class="fa fa-check"></i><b>12.4</b> Graphs in Exploratory Analysis and Reporting</a></li>
 <li class="chapter" data-level="" data-path="ggplot2.html"><a href="ggplot2.html#exercises-8"><i class="fa fa-check"></i>Exercises</a></li>
 </ul></li>
 </ul>
@@ -815,10 +813,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <hr />
 <p>Let’s now take a scatterplot which shows the diamonds` volume, price and color and fine-tune its aesthetics with the help of the scale aspect.</p>
-</div>
-</div>
-<div id="tu" class="section level2">
-<h2><span class="header-section-number">12.4</span> TU</h2>
 <p><strong>Assignment 12.24 - tweaking the scaling aspect of aesthetics</strong></p>
 <div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb586-1" title="1"><span class="co"># &quot;fix&quot; the axes and the legend of the graph </span></a>
 <a class="sourceLine" id="cb586-2" title="2"><span class="co"># - call the x and y axes &quot;volume in mm3&quot; and &quot;price in $&quot;</span></a>
@@ -981,8 +975,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="osnoveR_files/figure-html/unnamed-chunk-446-1.png" width="672" /></p>
 </div>
 <hr />
+</div>
 <div id="conditional-faceted-graphs" class="section level3">
-<h3><span class="header-section-number">12.4.1</span> Conditional (faceted) graphs</h3>
+<h3><span class="header-section-number">12.3.7</span> Conditional (faceted) graphs</h3>
 <p>We have previously mentioned the <code>group</code> aesthetic which, prior to visualization within a dataset, groups data into subsets defined by the selected grouping variable and then visualizes them accordingly. We have also learned that we can do implicit groupings using aesthetics of color, shape, size, etc.</p>
 <p>What is common to these principles is that visual separation, depending on a variable, is performed inside the same graph. In other words, we can use different aesthetics to represent several different visualizations within a single graph.</p>
 <p>Conditional (faceted) graphs work on the same principle, but separation by a selected variable (or variables) is done by visualizing multiple graphs which are then displayed side by side. The resultant graphs present the same information as the aesthetics of the (implicit or explicit) group, but in a way which makes it somewhat easier to study and compare each subgraph separately.</p>
@@ -1065,7 +1060,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="graphs-in-exploratory-analysis-and-reporting" class="section level2">
-<h2><span class="header-section-number">12.5</span> Graphs in Exploratory Analysis and Reporting</h2>
+<h2><span class="header-section-number">12.4</span> Graphs in Exploratory Analysis and Reporting</h2>
 <p>Before we finish the chapter, we can briefly look at the difference between graphs made for exploratory data analysis and those we use in reports, to communicate our conclusions to other people, and to share our findings.</p>
 <p><strong>Exploratory data analysis</strong> often aims for <strong>efficiency and quantity</strong>. It has already been said that exploratory analysis comes down to answering a series of questions that an analyst asks regarding data. How pretty the graph looks is often irrelevant - the main thing is that graphs have enough information to be able to answer the questions being asked and offer foundations for setting up various hypotheses. The analyst will also often try and experiment with different combinations of aesthetics, geometries and statistics. Sometimes it is convenient to go beyond what <code>ggplot2</code> package offers and use additional packages that are more suitable for what the analyst wants to achieve. For example, the <code>ggpairs</code> function of the <code>GGally</code> package allows pairing of multiple variables of a data frame and creating a matrix of single and two-variable graphs:</p>
 <div class="sourceCode" id="cb610"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb610-1" title="1"><span class="co">#library (GGally) #if necessary</span></a>
