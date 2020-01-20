@@ -412,19 +412,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb679-9" title="9">wine &lt;-<span class="st"> </span>wine[<span class="kw">complete.cases</span>(wine),]</a></code></pre></div>
 <pre><code>## Observations: 6,497
 ## Variables: 13
-## $ fixed.acidity        &lt;int&gt; 7, 63, 81, 72, 72, 81, 62, 7, 63, 81, 81,...
-## $ volatile.acidity     &lt;dbl&gt; 0.27, 0.30, 0.28, 0.23, 0.23, 0.28, 0.32,...
-## $ citric.acid          &lt;dbl&gt; 0.36, 0.34, 0.40, 0.32, 0.32, 0.40, 0.16,...
-## $ residual.sugar       &lt;dbl&gt; 20.70, 1.60, 6.90, 8.50, 8.50, 6.90, 7.00...
-## $ chlorides            &lt;dbl&gt; 0.045, 0.049, 0.050, 0.058, 0.058, 0.050,...
-## $ free.sulfur.dioxide  &lt;int&gt; 45, 14, 30, 47, 47, 30, 30, 45, 14, 28, 1...
-## $ total.sulfur.dioxide &lt;int&gt; 170, 132, 97, 186, 186, 97, 136, 170, 132...
-## $ density              &lt;dbl&gt; 1.0010, 0.9940, 0.9951, 0.9956, 0.9956, 0...
-## $ pH                   &lt;int&gt; 3, 33, 326, 319, 319, 326, 318, 3, 33, 32...
-## $ sulphates            &lt;dbl&gt; 0.45, 0.49, 0.44, 0.40, 0.40, 0.44, 0.47,...
-## $ alcohol              &lt;dbl&gt; 88, 95, 101, 99, 99, 101, 96, 88, 95, 11,...
-## $ quality              &lt;int&gt; 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 7,...
-## $ type                 &lt;chr&gt; &quot;white&quot;, &quot;white&quot;, &quot;white&quot;, &quot;white&quot;, &quot;whit...</code></pre>
+## $ fixed.acidity        &lt;dbl&gt; 7.4, 7.8, 7.8, 11.2, 7.4, 7.4, 7.9, 7.3, ...
+## $ volatile.acidity     &lt;dbl&gt; 0.700, 0.880, 0.760, 0.280, 0.700, 0.660,...
+## $ citric.acid          &lt;dbl&gt; 0.00, 0.00, 0.04, 0.56, 0.00, 0.00, 0.06,...
+## $ residual.sugar       &lt;dbl&gt; 1.9, 2.6, 2.3, 1.9, 1.9, 1.8, 1.6, 1.2, 2...
+## $ chlorides            &lt;dbl&gt; 0.076, 0.098, 0.092, 0.075, 0.076, 0.075,...
+## $ free.sulfur.dioxide  &lt;dbl&gt; 11, 25, 15, 17, 11, 13, 15, 15, 9, 17, 15...
+## $ total.sulfur.dioxide &lt;dbl&gt; 34, 67, 54, 60, 34, 40, 59, 21, 18, 102, ...
+## $ density              &lt;dbl&gt; 0.9978, 0.9968, 0.9970, 0.9980, 0.9978, 0...
+## $ pH                   &lt;dbl&gt; 3.51, 3.20, 3.26, 3.16, 3.51, 3.51, 3.30,...
+## $ sulphates            &lt;dbl&gt; 0.56, 0.68, 0.65, 0.58, 0.56, 0.56, 0.46,...
+## $ alcohol              &lt;dbl&gt; 9.4, 9.8, 9.8, 9.8, 9.4, 9.4, 9.4, 10.0, ...
+## $ quality              &lt;int&gt; 5, 5, 5, 6, 5, 5, 5, 7, 7, 5, 5, 5, 5, 5,...
+## $ type                 &lt;chr&gt; &quot;red&quot;, &quot;red&quot;, &quot;red&quot;, &quot;red&quot;, &quot;red&quot;, &quot;red&quot;,...</code></pre>
 </div>
 <p>Suppose the attribute <code>quality</code> is the target variable and all the other columns are potential predictors.</p>
 <p>How do you split this set on the training set and test set using random selection? There are several ways to do this, and even specialized functions and packages for this purpose, but we will learn a simple and easy-to-understand method that uses the <code>sample</code> function. If we assume that <code>df</code> is the data frame that we want to split into a training and test set that we will store in <code>df.train</code> and <code>df.test</code> variables, then random selection can be done as follows:</p>
@@ -467,29 +467,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -3.1979 -0.5375 -0.0454  0.5078  4.9346 
+## -3.7801 -0.4631 -0.0378  0.4576  2.7565 
 ## 
 ## Coefficients:
 ##                        Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)           9.723e+01  4.451e+00  21.843  &lt; 2e-16 ***
-## fixed.acidity        -4.744e-04  4.133e-04  -1.148 0.251125    
-## volatile.acidity     -1.351e+00  1.011e-01 -13.366  &lt; 2e-16 ***
-## citric.acid           3.106e-01  9.469e-02   3.280 0.001047 ** 
-## residual.sugar        1.648e-03  4.832e-04   3.411 0.000654 ***
-## chlorides            -3.657e+00  4.188e-01  -8.733  &lt; 2e-16 ***
-## free.sulfur.dioxide   1.041e-04  2.445e-04   0.426 0.670234    
-## total.sulfur.dioxide  1.090e-04  9.830e-05   1.109 0.267442    
-## density              -9.150e+01  4.484e+00 -20.404  &lt; 2e-16 ***
-## pH                   -7.765e-05  1.259e-04  -0.617 0.537511    
-## sulphates             8.632e-01  9.224e-02   9.358  &lt; 2e-16 ***
-## alcohol               3.983e-16  3.991e-16   0.998 0.318384    
-## typewhite            -3.714e-01  4.514e-02  -8.229 2.44e-16 ***
+## (Intercept)           9.024e+01  1.618e+01   5.578 2.57e-08 ***
+## fixed.acidity         7.248e-02  1.849e-02   3.919 9.01e-05 ***
+## volatile.acidity     -1.386e+00  9.720e-02 -14.260  &lt; 2e-16 ***
+## citric.acid          -1.279e-01  9.676e-02  -1.322 0.186209    
+## residual.sugar        5.917e-02  6.935e-03   8.532  &lt; 2e-16 ***
+## chlorides            -6.720e-01  3.934e-01  -1.708 0.087705 .  
+## free.sulfur.dioxide   5.231e-03  9.121e-04   5.735 1.04e-08 ***
+## total.sulfur.dioxide -1.600e-03  3.865e-04  -4.140 3.54e-05 ***
+## density              -8.915e+01  1.641e+01  -5.431 5.89e-08 ***
+## pH                    3.912e-01  1.073e-01   3.647 0.000268 ***
+## sulphates             7.426e-01  8.966e-02   8.283  &lt; 2e-16 ***
+## alcohol               2.446e-01  2.081e-02  11.751  &lt; 2e-16 ***
+## typewhite            -3.030e-01  6.684e-02  -4.534 5.93e-06 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 0.7853 on 4533 degrees of freedom
-## Multiple R-squared:  0.1851, Adjusted R-squared:  0.183 
-## F-statistic: 85.82 on 12 and 4533 DF,  p-value: &lt; 2.2e-16</code></pre>
+## Residual standard error: 0.7391 on 4533 degrees of freedom
+## Multiple R-squared:  0.286,  Adjusted R-squared:  0.2842 
+## F-statistic: 151.3 on 12 and 4533 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <p>We see that the adjusted R-squared measure is relatively low and the average error is quite high, so linear regression is perhaps not the best option this scenario (or maybe the obtained characteristics of the wines are simply not good enough to predict its quality). In spite of this, we will now check how well the model works on unseen observations.</p>
 <p>In order to check the quality of our model, we have to choose the criterion to which we will adhere. For numeric goals we often use the <strong>RMSE</strong> measure (root mean square error):</p>
@@ -526,8 +526,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb689-9" title="9"></a>
 <a class="sourceLine" id="cb689-10" title="10"><span class="co"># remove the `predQualityLR` column from the `wine.train` dataset</span></a>
 <a class="sourceLine" id="cb689-11" title="11">wine.train<span class="op">$</span>predQualityLR &lt;-<span class="st"> </span><span class="ot">NULL</span></a></code></pre></div>
-<pre><code>## [1] 0.7841708
-## [1] 0.8078178</code></pre>
+<pre><code>## [1] 0.738077
+## [1] 0.7205543</code></pre>
 </div>
 <p>We see that the RMSE for the training set roughly corresponds to the residual standard error obtained in the model summary (a small difference is a result of the fact that we used the total number of observations, while in the calculation of the residual standard error we used the number of degrees of freedom - “dependent” variables, i.e. predictors). What is interesting is the fact that the value of RMSE measure of the test set is not dramatically larger than the RMSE measure, which means that the model works almost equally well (or badly) on new data.</p>
 <hr />
@@ -635,8 +635,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb699-3" title="3"><span class="kw">table</span>(wineNorm.test<span class="op">$</span>predictedType, wineNorm.test<span class="op">$</span>type)</a></code></pre></div>
 <pre><code>##        
 ##          red white
-##   red    476    14
-##   white    9  1450</code></pre>
+##   red    480     6
+##   white   10  1453</code></pre>
 </div>
 <p>Looking at the results we can intuitively conclude that in this case the classifier works extremely well, that is, white and red wines can be very easily classified by looking at their chemical properties. But we often want to describe the quality of the classifier using an objective, numerical measure. There are a number of such measures, and most of them can be directly calculated using values from the confusion matrix.</p>
 <p>Specifically, if we call the confusion matrix cells <em>TP</em>, <em>TN</em>, <em>FP</em>, <em>FN</em> (<em>true positive, true negative, false positive, false negative</em>), where we treat one class as “positive” and hence assigning the names of the corresponding cells depending on whether the classifier correctly guessed the class (main diagonal) or not (side diagonal). In this case, from the confusion matrix we can directly calculate the following measures:</p>
@@ -670,25 +670,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ##           Reference
 ## Prediction  red white
-##      red    476    14
-##      white    9  1450
+##      red    480     6
+##      white   10  1453
 ##                                           
-##                Accuracy : 0.9882          
-##                  95% CI : (0.9823, 0.9925)
-##     No Information Rate : 0.7512          
+##                Accuracy : 0.9918          
+##                  95% CI : (0.9867, 0.9953)
+##     No Information Rate : 0.7486          
 ##     P-Value [Acc &gt; NIR] : &lt;2e-16          
 ##                                           
-##                   Kappa : 0.9685          
-##  Mcnemar&#39;s Test P-Value : 0.4042          
+##                   Kappa : 0.9781          
+##  Mcnemar&#39;s Test P-Value : 0.4533          
 ##                                           
-##             Sensitivity : 0.9814          
-##             Specificity : 0.9904          
-##          Pos Pred Value : 0.9714          
-##          Neg Pred Value : 0.9938          
-##              Prevalence : 0.2488          
-##          Detection Rate : 0.2442          
-##    Detection Prevalence : 0.2514          
-##       Balanced Accuracy : 0.9859          
+##             Sensitivity : 0.9796          
+##             Specificity : 0.9959          
+##          Pos Pred Value : 0.9877          
+##          Neg Pred Value : 0.9932          
+##              Prevalence : 0.2514          
+##          Detection Rate : 0.2463          
+##    Detection Prevalence : 0.2494          
+##       Balanced Accuracy : 0.9877          
 ##                                           
 ##        &#39;Positive&#39; Class : red             
 ## </code></pre>
@@ -732,29 +732,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -3.1979 -0.5375 -0.0454  0.5078  4.9346 
+## -3.7801 -0.4631 -0.0378  0.4576  2.7565 
 ## 
 ## Coefficients:
 ##                        Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)           9.723e+01  4.451e+00  21.843  &lt; 2e-16 ***
-## fixed.acidity        -4.744e-04  4.133e-04  -1.148 0.251125    
-## volatile.acidity     -1.351e+00  1.011e-01 -13.366  &lt; 2e-16 ***
-## citric.acid           3.106e-01  9.469e-02   3.280 0.001047 ** 
-## residual.sugar        1.648e-03  4.832e-04   3.411 0.000654 ***
-## chlorides            -3.657e+00  4.188e-01  -8.733  &lt; 2e-16 ***
-## free.sulfur.dioxide   1.041e-04  2.445e-04   0.426 0.670234    
-## total.sulfur.dioxide  1.090e-04  9.830e-05   1.109 0.267442    
-## density              -9.150e+01  4.484e+00 -20.404  &lt; 2e-16 ***
-## pH                   -7.765e-05  1.259e-04  -0.617 0.537511    
-## sulphates             8.632e-01  9.224e-02   9.358  &lt; 2e-16 ***
-## alcohol               3.983e-16  3.991e-16   0.998 0.318384    
-## typewhite            -3.714e-01  4.514e-02  -8.229 2.44e-16 ***
+## (Intercept)           9.024e+01  1.618e+01   5.578 2.57e-08 ***
+## fixed.acidity         7.248e-02  1.849e-02   3.919 9.01e-05 ***
+## volatile.acidity     -1.386e+00  9.720e-02 -14.260  &lt; 2e-16 ***
+## citric.acid          -1.279e-01  9.676e-02  -1.322 0.186209    
+## residual.sugar        5.917e-02  6.935e-03   8.532  &lt; 2e-16 ***
+## chlorides            -6.720e-01  3.934e-01  -1.708 0.087705 .  
+## free.sulfur.dioxide   5.231e-03  9.121e-04   5.735 1.04e-08 ***
+## total.sulfur.dioxide -1.600e-03  3.865e-04  -4.140 3.54e-05 ***
+## density              -8.915e+01  1.641e+01  -5.431 5.89e-08 ***
+## pH                    3.912e-01  1.073e-01   3.647 0.000268 ***
+## sulphates             7.426e-01  8.966e-02   8.283  &lt; 2e-16 ***
+## alcohol               2.446e-01  2.081e-02  11.751  &lt; 2e-16 ***
+## typewhite            -3.030e-01  6.684e-02  -4.534 5.93e-06 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 0.7853 on 4533 degrees of freedom
-## Multiple R-squared:  0.1851, Adjusted R-squared:  0.183 
-## F-statistic: 85.82 on 12 and 4533 DF,  p-value: &lt; 2.2e-16</code></pre>
+## Residual standard error: 0.7391 on 4533 degrees of freedom
+## Multiple R-squared:  0.286,  Adjusted R-squared:  0.2842 
+## F-statistic: 151.3 on 12 and 4533 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <p>We see that we get the same result as when we called the <code>lm</code> function directly at the beginning of this chapter.</p>
 <p>Note that in this case we haven’t used a large number of parameters of the <code>train</code> function that we can see in the documentation. For example, using the <code>preprocess</code> parameter can automatically perform some data preparation procedures such as normalization, BoxCox transformation, imputation of missing values, and so on.</p>
@@ -816,9 +816,9 @@ This function provides us with a “control panel” which allows us to fine-tun
 <a class="sourceLine" id="cb711-8" title="8"><span class="kw">cat</span>(<span class="st">&quot;RMSE Linear regression:&quot;</span>, <span class="kw">rmse</span>(wine.test<span class="op">$</span>predQualityLR, wine.test<span class="op">$</span>quality))</a>
 <a class="sourceLine" id="cb711-9" title="9"><span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">RMSE Random Forest:&quot;</span>, <span class="kw">rmse</span>(wine.test<span class="op">$</span>predQualityRF, wine.test<span class="op">$</span>quality))</a>
 <a class="sourceLine" id="cb711-10" title="10"><span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">RMSE Support Vectors:&quot;</span>, <span class="kw">rmse</span>(wine.test<span class="op">$</span>predQualitySVM, wine.test<span class="op">$</span>quality))</a></code></pre></div>
-<pre><code>## RMSE Linear regression: 0.8078178
-## RMSE Random Forest: 0.6772888
-## RMSE Support Vectors: 0.7011601</code></pre>
+<pre><code>## RMSE Linear regression: 0.7205543
+## RMSE Random Forest: 0.6929578
+## RMSE Support Vectors: 0.8515409</code></pre>
 </div>
 <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Programirajmo u R-u</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.fer.unizg.hr/en/damir.pintar" property="cc:attributionName" rel="cc:attributionURL">Damir Pintar</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://ratnip.github.io/FER_OPJR/" rel="dct:source">https://ratnip.github.io/FER_OPJR/</a></p>
 
