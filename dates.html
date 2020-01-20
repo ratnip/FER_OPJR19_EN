@@ -538,7 +538,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb374-6" title="6"><span class="co"># &quot;01-12-2001 14:30&quot; &lt;- timestamp read in New York, USA, EST time zone</span></a>
 <a class="sourceLine" id="cb374-7" title="7"><span class="kw">as.POSIXct</span>(<span class="st">&quot;2015-10-28 15:30:42&quot;</span>)</a>
 <a class="sourceLine" id="cb374-8" title="8"><span class="kw">as.POSIXct</span>(<span class="st">&quot;01-12-2001 14:30&quot;</span>, <span class="dt">tz =</span> <span class="st">&quot;EST&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;% d-% m-% Y% H:% M&quot;</span>)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-01-20 15:33:14 CET&quot;
+<pre><code>## [1] &quot;2020-01-20 16:11:41 CET&quot;
 ## [1] &quot;2015-10-28 15:30:42 CET&quot;
 ## [1] NA</code></pre>
 </div>
@@ -574,8 +574,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb380-3" title="3"></a>
 <a class="sourceLine" id="cb380-4" title="4"><span class="co"># print out how many hours have passed since midnight 1/1/2015. by far</span></a>
 <a class="sourceLine" id="cb380-5" title="5"><span class="kw">difftime</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;2015-01-01 00:00:00&quot;</span>, <span class="dt">units =</span> <span class="st">&quot;hours&quot;</span>)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-01-20 15:49:55 CET&quot;
-## Time difference of 44295.55 hours</code></pre>
+<pre><code>## [1] &quot;2020-01-20 16:28:22 CET&quot;
+## Time difference of 44296.2 hours</code></pre>
 </div>
 <hr />
 <p>The class <code>POSIXlt</code> is very similar to its compact relative <code>POSIXct</code>. We use the similarly fashioned <code>as.POSIXlt</code> function to create one, however the difference is that we end up with a list which allows us to easily extract certain parameters from a timestamp, such as number of seconds, minutes, day of the week, etc. We can easily see all the elements of the list if we create a <code>POSIXlt</code> object and then call the <code>unclass</code> function on it, which will convert it to an “ordinary” list. We can even go a step further - if we put this list through the <code>unlist</code> function, we get a simple, easily interpretable character vector as a result.</p>
@@ -723,7 +723,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb407-4" title="4"><span class="co"># print the timestamp which happened exactly an hour ago</span></a>
 <a class="sourceLine" id="cb407-5" title="5"><span class="kw">now</span>() <span class="op">-</span><span class="st"> </span><span class="dv">60</span> <span class="op">*</span><span class="st"> </span><span class="dv">60</span></a></code></pre></div>
 <pre><code>## [1] &quot;2020-01-21&quot;
-## [1] &quot;2020-01-20 14:33:16 CET&quot;</code></pre>
+## [1] &quot;2020-01-20 15:11:43 CET&quot;</code></pre>
 </div>
 <hr />
 <p>We already mentioned that managing time-related data can become very complex, especially considering that time intervals can be expressed generically (e.g., “2 years”) or specifically (the span of two dates), and that mathematical and calendar ways of expressing time intervals do not necessarily match (e.g., “period of one year” can mathematically mean “the exact number of seconds in 365 days” but also the contextually dependent “period until the same date next year”).</p>
